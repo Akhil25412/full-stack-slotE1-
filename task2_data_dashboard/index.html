@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Data Dashboard | Task 2</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar/Stats Section -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h2>EduDash</h2>
+            </div>
+            
+            <div class="stats-section">
+                <h3>Department Stats</h3>
+                <div id="statsList" class="stats-grid">
+                    <!-- Stats will be loaded here -->
+                </div>
+            </div>
+
+            <div class="filters-section">
+                <h3>Filters</h3>
+                <div class="filter-group">
+                    <label>Department</label>
+                    <select id="deptFilter">
+                        <option value="">All Departments</option>
+                        <option value="Computer Science">Computer Science</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Electronics">Electronics</option>
+                        <option value="Mechanical">Mechanical</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label>Sort By</label>
+                    <select id="sortBy">
+                        <option value="name">Name</option>
+                        <option value="dob">Date of Birth</option>
+                        <option value="created_at">Registration Date</option>
+                    </select>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content Section -->
+        <main class="main-content">
+            <header class="header">
+                <h1>Student Records</h1>
+                <div class="user-info">
+                    <span id="totalCount">Total Students: 0</span>
+                </div>
+            </header>
+
+            <div class="table-card">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>DOB</th>
+                                <th>Department</th>
+                                <th>Phone</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <!-- Data will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
