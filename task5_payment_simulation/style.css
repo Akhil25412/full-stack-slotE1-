@@ -1,0 +1,190 @@
+:root {
+    --bg: #0a0a0a;
+    --terminal-bg: #141414;
+    --card-bg: #1e1e1e;
+    --primary: #c084fc;
+    --accent: #22c55e;
+    --error: #ef4444;
+    --text: #e5e7eb;
+    --text-muted: #71717a;
+    --border: #27272a;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 1.5rem;
+}
+
+.terminal-container {
+    width: 100%;
+    max-width: 800px;
+    background: var(--terminal-bg);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    overflow: hidden;
+}
+
+.terminal-header {
+    background: #1a1a1a;
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border);
+}
+
+.terminal-header .controls span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 6px;
+}
+
+.terminal-header .controls span:nth-child(1) { background: #ff5f56; }
+.terminal-header .controls span:nth-child(2) { background: #ffbd2e; }
+.terminal-header .controls span:nth-child(3) { background: #27c93f; }
+
+.terminal-header .title {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    font-family: monospace;
+}
+
+.wallets {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    padding: 2rem;
+}
+
+.wallet-card {
+    background: var(--card-bg);
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    text-align: center;
+}
+
+.wallet-card .label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.wallet-card .amount {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.wallet-card.merchant .amount {
+    color: var(--accent);
+}
+
+.payment-view {
+    padding: 0 2rem 2rem;
+}
+
+.payment-card {
+    background: #1a1a1a;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+}
+
+.payment-card h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.input-container {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0a0a0a;
+    padding: 0.5rem 1.5rem;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    margin-bottom: 1rem;
+}
+
+.input-container span { font-size: 1.5rem; color: var(--text-muted); }
+.input-container input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    width: 150px;
+    text-align: center;
+}
+
+.input-container input:focus { outline: none; }
+
+.hint {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    margin-bottom: 2rem;
+    max-width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pay-btn {
+    background: var(--primary);
+    color: black;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.pay-btn:hover {
+    background: #d8b4fe;
+    transform: translateY(-2px);
+}
+
+.console {
+    background: #000;
+    padding: 1.5rem;
+    border-top: 1px solid var(--border);
+}
+
+.console-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-family: monospace;
+    margin-bottom: 0.75rem;
+}
+
+.logs-container {
+    height: 100px;
+    overflow-y: auto;
+    font-family: monospace;
+    font-size: 0.85rem;
+    line-height: 1.6;
+}
+
+.log.system { color: #60a5fa; }
+.log.success { color: var(--accent); }
+.log.error { color: var(--error); }
+.log::before { content: '➜ '; opacity: 0.5; }

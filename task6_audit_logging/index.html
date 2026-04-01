@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inventory Audit - Automated Logging</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📦 Inventory <span class="accent">Audit System</span></h1>
+            <p>Real-time database triggers logging every shift.</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Left Side: Product Management -->
+            <section class="card product-section">
+                <h2>Manage Products</h2>
+                <form id="productForm" class="glass-form">
+                    <input type="text" id="name" placeholder="Product Name" required>
+                    <input type="text" id="category" placeholder="Category" required>
+                    <input type="number" id="stock" placeholder="Initial Stock" required>
+                    <input type="number" step="0.01" id="price" placeholder="Price ($)" required>
+                    <button type="submit" class="btn-primary">Add Product</button>
+                </form>
+
+                <div class="table-container">
+                    <table id="productTable">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Stock</th>
+                                <th>Price</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Products will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Right Side: Audit Logs -->
+            <section class="card audit-section">
+                <h2>🛡️ Automated Audit Log</h2>
+                <div class="log-container" id="auditLog">
+                    <!-- Logs will appear here -->
+                </div>
+                
+                <div class="report-summary">
+                    <h3>Daily Activity Summary</h3>
+                    <div id="reportContainer"></div>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
