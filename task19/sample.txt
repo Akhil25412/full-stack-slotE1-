@@ -1,0 +1,4 @@
+# Sample Project for Git Demo
+This is a simple text file to demonstrate Git operations like staging and committing.
+Version 1.1 (Updated to demonstrate version history)
+Added a new line to simulate development progress.
